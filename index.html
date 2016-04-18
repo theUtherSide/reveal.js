@@ -41,188 +41,191 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Demandbase Tag</h1>
-					<h3>Tag Admin + JS API</h3>
+					<h1>Demandbase Engineering</h1>
+					<h3>Blue Team - Day 1</h3>
 					<p>
-						<small>Lunch n' Learn by <a href="mailto:mdowns@demandbase.com">Matthew Downs</a></small>
+						<!-- small><a href="mailto:mdowns@demandbase.com">Matthew Downs</a></small -->
 					</p>
 				</section>
-
 				<section>
-					<h2>What is a Demandbase Tag?</h2>
-					<ul>
-						<li>
-							JavaScript files hosted in S3/CloudFront
-						</li>
-						<li>
-							Runs on (nearly) every page of every customer's website
-						</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Why Demandbase Tag?</h2>
-					<ul>
-						<li>v2012: Customer gets API docs and self-implements</li>
-						<li>v2013: Boilerplate JS given to customers for deployment</li>
-						<li>vNow:</li>
-						<ul>
-							<li>Maintainability: Central place to manage distributed JS code</li>
-							<li>Scalability: small, static files delivered super fast over CDN</li>
-							<li>Deployability: Customer deploys once, Demandbase maintains remotely</li>
-							<li>Abstraction: shared core modules with custom configuration instead of ad-hoc implementations.</li>
-						</ul>
-					</ul>
-				</section>
-
-
-				<section>
-					<h2>Why JavaScript on Customer Websites?</h2>
-					<ul>
-						<li><strong>Reporting</strong> <br/>
-							Creates/sends Page View data by calling the IP API
-						</li>
-						<li><strong>Advertising</strong> <br/>
-							Load pixels from IPOW (view, retargeting, and conversion)</li>
-						<li><strong>Integrating</strong> <br/>
-							Company Profile into 3rd party systems</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Size and Scale</h2>
-					<ul>
-						<li>&gt; 625 tags (Accounts)</li>
-						<li>~ 500M file requests / month</li>
-						<li>&gt; 6000 GB transferred</li>
-						<li>Median File Size: ~14kb</li>
-						<li><em>Most-Active Account:</em> <br/> <strong>Dropbox &gt; 187M requests / month</strong></li>
-						<li>Forms Module: &gt; 12M requests / month</li>
-					</ul>
-				</section>
-
-				<!-- section>
-					<h2>OS</h2>
-					<img src="https://www.evernote.com/shard/s100/sh/09c1ed8e-e9de-401f-bfb7-3baeeb289286/e79c03ab0b599d1d/res/8f5c4afd-5f0c-4b97-be8e-652ec37ff3d6/skitch.png">
-				</section -->
-
-				<section>
-					<h2>What is <em>a</em> Demandbase Tag?</h2>
-					<h3><a href="http://tag.demandbase.com/accounts/LYir7VXR/welcome">Customer Welcome page</a></h3>
-					<pre>
-						<code data-trim contenteditable>
-<script>
-(function(d,b,a,s,e){ var t = b.createElement(a),
-	fs = b.getElementsByTagName(a)[0];
-	t.async=1; t.id=e;
-	t.src=('https:'==document.location.protocol ? 'https://' : 'http://') + s;
-	fs.parentNode.insertBefore(t, fs);
-})(window,document,'script','scripts.demandbase.com/LYir7VXR.min.js','demandbase_js_lib');
-</script>
-						</code>
-					</pre>
-				</section>
-
-				<section>
-					<h2>How are Tags Built?</h2>
-					<h3>2 repos involved:</h3>
-					<ul>
-						<li>
-							<a href="https://github.com/Demandbase/js-api">js-api</a> -
-							JavaScript modules that are available to use in Tags.
-						</li>
-						<li>
-							<a href="https://github.com/Demandbase/tag">tag</a> -
-							Admin application for creating and configuring Tags on each Account.
-						</li>
-					</ul>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>JS API - Integrations a.k.a. "Connectors"</h2>
-						<ul>
-							<li>JavaScript modules that can be added to a customer's Tag file.</li>
-							<li>Ready-made, configurable integrations into 3rd party applications</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Available Connectors/Integrations</h2>
-						<ul>
-							<li>Google Analytics</li>
-							<li>WebTrends Analytics</li>
-							<li>Adobe Audience Manager</li>
-							<li>Forms:</li>
-							<ul>
-								<li>Marketing Automation Systems: (any/all)</li>
-								<ul>
-									<li>Eloqua</li>
-									<li>Marketo</li>
-									<li>Pardot</li>
-									<li>ExactTarget</li>
-									<li>NeoLane</li>
-								</ul>
-								<li>works with any web form</li>
-								<li>includes Company Autocomplete Widget</li>
-							</ul>
-							<li>Content:</li>
-							<ul>
-								<li>Monetate</li>
-								<li>JS-based Segments/Content modules</li>
-							</ul>
-						</ul>
-					</section>
-					<section>
-						<h2>Other Modules/Functionality</h2>
-						<ul>
-							<li>Ads (includes Campaigns, Conversions and Events)</li>
-							<li>Extended Company Targeting</li>
-							<li>Job Function Targeting</li>
-							<li>Domain API Identification</li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
-					<h2><a href="https://github.com/Demandbase/tag">Tag Admin</a></h2>
+					<h2>Agenda</h2>
 					<ol>
-						<li>
-							<a href="http://tag.demandbase.com/admin/accounts">Application</a>
-							<ul>
-								<li>Used by Services and Support teams to create each customer's JS file.</li>
-								<li>Set available modules and define custom configuration.</li>
-							</ul>
-						</li>
-						<li>
-							<a href="https://github.com/Demandbase/tag#api-endpoints">API</a>
-							<ul>
-								<li>Microservice that performs actions on Tags</li>
-								<li>Create new Accounts, Update modules/configurations, deploy to S3</li>
-							</ul>
-						</li>
+						<li>Agile</li>
+						<li>Scrum</li>
+						<li>Sprint0</li>
 					</ol>
 				</section>
 
+				<section>
+					<h2>Agile Manifesto</h2>
+					<img src="http://www.ibsglobalweb.com/wp-content/uploads/2012/02/agile-manifesto.jpg" alt="">
+				</section>
 
 				<section>
-					<h2>Demandbase Tag Resources</h2>
+					<h4>Agile Principles</h4>
+					<img src="https://pritamsen.files.wordpress.com/2014/04/agile1.jpg" alt="">
+				</section>
+
+				<section>
+					<h2>Agile Teams</h2>
 					<ul>
 						<li>
-							<a href="http://tag.demandbase.com/docs/">JS API Docs</a>
+							Built on sound engineering practices like <strong>code reviews, task branching, continuous integration, and regular release cadences</strong>.
 						</li>
 						<li>
-							<a href="https://demandbase.atlassian.net/wiki/display/SS/Release+Notes">Release Notes</a>
+							<strong>Continuous mentoring</strong> - Everyone learns from and mentors everyone.
 						</li>
 						<li>
-							<a href="https://demandbase.atlassian.net/wiki/display/SS/Demandbase+Tag">Confluence</a> (internal)
-						</li>
-						<li>
-							<a href="https://support.demandbase.com/hc/en-us/sections/200682404-Demandbase-Tag">Knowledge Base</a> (external)
+							<strong>Shared skillsets</strong> - Cross-functional teams unlock the power of the team to tackle heterogeneous work.
 						</li>
 					</ul>
 				</section>
 
+				<section>
+					<h2>
+						Cross-department Collaboration
+					</h2>
+					<img src="https://www.atlassian.com/agile/teams/sectionWrap/00/column/00/moreContent/05/imageBinary/team_triads.png" alt="">
+				</section>
+
+				<section>
+					<h3>Team Development Stages</h3>
+					<img src="https://www.atlassian.com/agile/teams/sectionWrap/00/column/00/moreContent/01/imageBinary/tuckman_stages_of_group_development.svg" alt="">
+				</section>
+
+				<section>
+					<h3>Team Productivity</h3>
+					<img src="https://demandbase.atlassian.net/wiki/download/attachments/45482097/image2016-4-11%2017%3A16%3A38.png?version=1&modificationDate=1460420198214&api=v2" alt="">
+				</section>
+
+				<section>
+					<h2>Scrum Overview</h2>
+					<h3>Roles</h3>
+					<ul>
+						<li>
+							<strong>Product Owner</strong> - single ringable neck, manages backlog
+						</li>
+						<li>
+							<strong>Scrum Master</strong> - facilitator, liason, servent-leader
+						</li>
+						<li>
+							<strong>Development team - turns backlog into functionality</strong>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Scrum Overview</h2>
+					<ul>
+						<li><h2>Ceremonies</h2></li>
+						<li>
+							Daily Standup ("Scrum")
+						</li>
+						<li>
+							Backlog Refinement ("Grooming")
+						</li>
+						<li>
+							Sprint Review
+						</li>
+						<li>
+							Sprint Retrospective
+						</li>
+					</ul>
+
+
+					<ul>
+						<li><h2>Artifacts</h2></li>
+						<li>
+							Product Backlog
+						</li>
+						<li>
+							Sprint Backlog
+						</li>
+						<li>
+							Sprint Burn Down
+						</li>
+						<li>
+							Product Burn Down
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Project Path</h2>
+					<img src="http://static1.squarespace.com/static/557498e2e4b00c6b04e0fb98/5574b2d6e4b01fa671889285/5574b368e4b01fa67188a36c/1433711464765/iterativedesign-748525.gif?format=original" alt="">
+				</section>
+
+				<section>
+					<h2>Sprint 0 - Vision Sprint</h2>
+					<img src="http://static1.squarespace.com/static/557498e2e4b00c6b04e0fb98/5574b2d6e4b01fa671889285/5574b368e4b01fa67188a372/1433711464865/visionsprint-708067.gif?format=original" alt="">
+				</section>
+
+				<section>
+					<h2>Sprint 0</h2>
+					<!-- Design + Engineering Tracks -->
+					<img src="http://static1.squarespace.com/static/557498e2e4b00c6b04e0fb98/5574b2d6e4b01fa671889285/5574b368e4b01fa67188a366/1433711464734/UCDAgile-790038.gif?format=original" alt="product backlog state">
+				</section>
+
+				<section>
+					<h2>Sprint 0</h2>
+					<!-- Backlog states -->
+					<img src="https://34slpa7u66f159hfp1fhl9aur1-wpengine.netdna-ssl.com/wp-content/uploads/2014/07/Slide086.jpg" alt="product backlog state">
+				</section>
+
+				<section>
+					<h2>INVEST in Stories</h2>
+					<ul>
+						<li><strong>I</strong>ndependent</li>
+						<li><strong>N</strong>egotiable</li>
+						<li><strong>V</strong>aluable</li>
+						<li><strong>E</strong>stimable</li>
+						<li><strong>S</strong>mall</li>
+						<li><strong>T</strong>estable</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Story Development</h2>
+					<img src="https://34slpa7u66f159hfp1fhl9aur1-wpengine.netdna-ssl.com/wp-content/uploads/2014/07/Slide084.jpg" alt="">
+				</section>
+
+				<section>
+					<h2>Sprint 0 - Goals &amp; Activities</h2>
+					<ul>
+						<li>Product backlog development + refinement</li>
+						<ul>
+							<li>Identify necessary "pre-work"</li>
+							<li>Outline development plan</li>
+						</ul>
+						<li>Cross-team Standards and Practices</li>
+						<ul>
+							<li>Key Architecture Decisions</li>
+							<li>Agile Charter</li>
+						</ul>
+						<li>Team Working Agreements</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Sprint 0 / Sprint 1</h2>
+					<ul>
+						<li>Application Scaffolding</li>
+						<li>Test Frameworks</li>
+						<li>Continuous Integration</li>
+						<li>Continuous Deployment</li>
+						<li>Auditing / Tracking / Logging</li>
+						<li>etc...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Design and Development</h2>
+					<img src="http://static1.squarespace.com/static/557498e2e4b00c6b04e0fb98/5574b2d6e4b01fa671889285/5574b368e4b01fa67188a378/1433711464898/ddsprint-751645.gif?format=original" alt="">
+				</section>
+
+				<section>
+					<img src="http://www.trainingforwarriors.com/wp-content/uploads/2015/02/HappyHour.jpg" alt="">
+				</section>
 			</div>
 
 		</div>
